@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageColor
 import os
 working_directory = os.getcwd()
-#os.chdir("/home/stephen/Pictures/flameshot_pics/")
+os.chdir("/home/stephen/Pictures/flameshot_pics/")
 print(f"Current working directory is {working_directory}, ")
 print("please ensure all images and fonts are in this directory")
 
@@ -262,15 +262,13 @@ Which faction does your character belong to? \nEnter the number beside the facti
     faction_dict = {"1": "gondor", "2": "rohan", "3":"dolarmoth", "4": "moriaevil", "5": "isengard",
                     "6": "mordor", "7": "easterlings", "8": "harad", "9":"angmar", "10": "notavailable"}
 
-    if faction in faction_dict.keys():
-        faction_available = True
-        faction_image=Image.open(f"{images_folder}{faction_dict[faction]}.png").resize((20,20))
+    if faction == "10":
         break
+    elif faction in faction_dict.keys():
+        faction_available = True
+        faction_image = Image.open(f"{images_folder}{faction_dict[faction]}.png").resize((20,20))
+        final2.paste(faction_image, (430, 25))
     else:
         print("\nPlease enter the number which corresponds to your faction \n")
 
-
-
-#faction_image = Image.open(images_folder + input("Name of faction image file: ")).resize((20, 20))
-final2.paste(faction_image, (430, 25))
 final2.show()

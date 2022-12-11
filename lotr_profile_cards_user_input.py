@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageColor
 import os
 working_directory = os.getcwd()
-os.chdir("/home/stephen/Pictures/flameshot_pics/")
+#os.chdir("/home/stephen/Pictures/flameshot_pics/")
 print(f"Current working directory is {working_directory}, ")
 print("please ensure all images and fonts are in this directory")
 
@@ -242,7 +242,7 @@ else:
                          align="left")
         power_stat_y = power_stat_y + 13
 
-images_folder = ("/home/stephen/Pictures/flameshot_pics/")
+images_folder = working_directory
 
 character_image_file = input("Enter the name of the character image file without the extension (image must be .png)")
 character_image = Image.open(f"{character_image_file}.png").resize((120, 120))
